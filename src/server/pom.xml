@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ddm</groupId>
+    <artifactId>Server</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <parent>
+        <groupId>ddm</groupId>
+        <artifactId>total</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../../pom.xml</relativePath>
+    </parent>
+
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+
+        <outFileName>server</outFileName>
+        <buildDirectory>${project.basedir}/../../bin/server</buildDirectory>
+        <testDirectory>${project.basedir}/../../tests/server</testDirectory>
+        <resourceDirectory>${project.basedir}/../../configs</resourceDirectory>
+        <jarPath>${buildDirectory}/${outFileName}.jar</jarPath>
+
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <build>
+        <finalName>${outFileName}</finalName>
+        <directory>${buildDirectory}</directory>
+        <sourceDirectory>src</sourceDirectory>
+        <testSourceDirectory>${testDirectory}</testSourceDirectory>
+
+        <resources>
+            <resource>
+                <directory>${resourceDirectory}</directory>
+            </resource>
+        </resources>
+
+        <testResources>
+            <testResource>
+                <directory>${resourceDirectory}</directory>
+            </testResource>
+        </testResources>
+
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>java</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <mainClass>ddm.server.Server</mainClass>
+                    <additionalClasspathElements>
+                        <additionalClasspathElement>
+                            ${jarPath}
+                        </additionalClasspathElement>
+                    </additionalClasspathElements>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>ddm</groupId>
+            <artifactId>Common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+</project>
