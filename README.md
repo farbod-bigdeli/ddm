@@ -27,4 +27,4 @@ Usage
 
 License
 -------
-This project is licensed under the GNU GENERAL PUBLIC LICENSE - see the [LICENSE.md](LICENSE.md) file for more details
+This project is licensed under the *Apache License* LICENSE - see the [LICENSE.md](LICENSE.md) file for more details
