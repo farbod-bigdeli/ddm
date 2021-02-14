@@ -8,17 +8,17 @@
         <outputRelativeToContentRoot value="true" />
         <module name="Client" />
       </profile>
-      <profile name="Annotation profile for total" enabled="true">
-        <sourceOutputDir name="../../bin/common/generated-sources/annotations" />
-        <sourceTestOutputDir name="../../bin/common/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <module name="Common" />
-      </profile>
       <profile name="Annotation profile for Server" enabled="true">
         <sourceOutputDir name="../../bin/server/generated-sources/annotations" />
         <sourceTestOutputDir name="../../bin/server/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Server" />
+      </profile>
+      <profile name="Annotation profile for total" enabled="true">
+        <sourceOutputDir name="../../bin/common/generated-sources/annotations" />
+        <sourceTestOutputDir name="../../bin/common/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Common" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

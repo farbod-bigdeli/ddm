@@ -4,6 +4,8 @@ package ddm.common.utility.log.internals;
 import ddm.common.utility.log.interfaces.ILogger;
 
 import java.io.InputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.logging.LogManager;
 
 
@@ -26,7 +28,7 @@ public class JavaUtilLoggerImpl implements ILogger {
     public void Append() {
         logger = java.util.logging.Logger.getLogger(JavaUtilLoggerImpl.class.getName());
         try {
-            InputStream inputStream = JavaUtilLoggerImpl.class.getResourceAsStream("/configs/common/logging.properties");
+            InputStream inputStream = getClass().getClassLoader().getResourceAsStream("logging.properties");
             LogManager.getLogManager().readConfiguration(inputStream);
         } catch (Exception e) {
             e.printStackTrace();

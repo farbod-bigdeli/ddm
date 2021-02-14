@@ -16,7 +16,10 @@ test_common:
 	@mvn -pl $(COMMON) clean compile test
 
 clean_all:
-	@mvn -pl $(COMMON),$(CLIENT) clean
+	@mvn -pl $(COMMON),$(CLIENT),$(SERVER) clean
+
+run_server: server
+	@mvn -pl $(SERVER) exec:java
 
 run_client: client
 	@mvn -pl $(CLIENT) exec:java

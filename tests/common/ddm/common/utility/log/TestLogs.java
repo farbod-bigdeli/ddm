@@ -5,6 +5,7 @@ import ddm.common.utility.log.interfaces.ILogs;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 
@@ -20,5 +21,7 @@ public class TestLogs {
 
         logs.AddAppender(loggers);
         logs.Info("test message");
+        assertEquals(1,1);
+
     }
 }
